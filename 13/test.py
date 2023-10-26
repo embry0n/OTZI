@@ -6,7 +6,6 @@ def face_capture():
 
     clf = cv2.CascadeClassifier(cascade_path) 
     web_camera = cv2.VideoCapture(0) # получаем видео с камеры
-    #camera = cv2.VideoCapture('video_2023-10-12_17-57-40.mp4')
     camera = cv2.VideoCapture('meow.mov')
 
     # пока не нажата любая клавиша — выполняем цикл. определяем лицо на видео
