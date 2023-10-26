@@ -1,1 +1,2 @@
+В этом файле хранятся клавиши, которые вводит пользователь
 Key.backspace Key.alt_l Key.tab Key.tab Key.tab Key.alt_l 
