@@ -1,3 +1,4 @@
+## НЕ ТРОГАЙТЬ ПАПКИ И ОСТАЛЬНЫЕ ФАЙЛЫ(Resources, Result, Readme, libraries, main, requirements)
 # Finding objects on the image
 In this project, I'll show you how to find objects in an image, select them, and count them. This program can work with recaptcha
 
