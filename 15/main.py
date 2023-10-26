@@ -6,7 +6,7 @@ import requests
 from test import probiv_ip_gps
 
 
-TOKEN = "5492874241:AAFwBjrZgYwnQ6OCR9GMQaoLmF03-b_NYfU"
+TOKEN = "BOT TOKEN" #vvodim token from botfather
 chat_id = "813122679"
 message = probiv_ip_gps()
 
